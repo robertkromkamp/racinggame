@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Racinggame example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">Racing Game</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <div id="feedback"></div>
+
+        <div id="registrationform">
+	        <form class="form-horizontal" id="register-form" >
+	            <div class="form-group form-group-lg">
+	                <label class="col-sm-2 control-label">Name driver</label>
+	                <div class="col-sm-10">
+	                    <input type="text" class="form-control" id="drivername" th:value="${drivername}" />
+	                </div>
+	            </div>
+	
+	            <div class="form-group">
+	                <div class="col-sm-offset-2 col-sm-10">
+	                    <button type="submit" id="bth-register"
+	                            class="btn btn-primary btn-lg">Register
+	                    </button>
+	                </div>
+	            </div>
+	        </form>
+        </div>
+    </div>
+    
+    <div id="startform" style="display:none">
+    	<form class="form-horizontal" id="start-form" >
+    		<div class="form-group form-group-lg">
+	        	<div class="col-sm-offset-2 col-sm-10">
+	            	<button type="submit" id="bth-start"
+	                	    class="btn btn-primary btn-lg">Start Race
+	            	</button>
+	        	</div>
+	        </div>
+	    </form>
+    </div>
+    
+	<div class="starter-template" style="min-height: 100px">
+	    <div id="navigationBlock" th:include="navigation::navigationFragment">
+	    </div>
+    </div>
+    
+    
+    <div class="starter-template" style="min-height: 500px">
+        <div id="carsBlock" th:include="overviewcars::carsFragment">
+	    </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <footer>
+        <p>
+            © <a href="https://nl.linkedin.com/in/robertkromkamp">Robert Kromkamp</a> 2017
+        </p>
+    </footer>
+</div>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

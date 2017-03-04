@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+     
+         <div th:fragment="carsFragment" class="col-sm-offset-2 col-sm-10"> 
+             <table class="table">
+	             <tr th:each="car : ${cars}" th:if="${not #lists.isEmpty(cars)}" >
+			        <td th:text="${car.id}"></td>
+			        <td th:text="${car.drivername}"></td>
+			        <td th:text="${car.color}"></td>
+			        <td th:text="${car.currentSpeed}"></td>
+			        <td th:text="${car.currentDirection}"></td>
+			        <td th:text="${car.currentOffset}"></td>
+			      </tr> 
+		      </table>
+         </div>
+                  
+         <div th:fragment="navigationFragment" id="navigationform">
+	    	<form class="form-horizontal" id="navigation-form" >
+	    		<div class="form-group">
+		        	<div class="col-sm-offset-2 col-sm-10">
+		            	<button type="submit" id="bth-left"
+		                	    class="btn btn-primary btn-lg" value="LEFT">Left
+		            	</button>
+		            	<button type="submit" id="bth-straight"
+		                	    class="btn btn-primary btn-lg" value="STRAIGHT">Straight
+		            	</button>
+		                <button type="submit" id="bth-right"
+		                	    class="btn btn-primary btn-lg" value="RIGHT">Right
+		            	</button>
+		            	<button type="submit" id="bth-stop"
+		                	    class="btn btn-primary btn-lg" value="STOPPED">Stop
+		            	</button>
+		            	<button type="submit" id="bth-slow"
+		                	    class="btn btn-primary btn-lg" value="SLOW">Slow
+		            	</button>
+		            	<button type="submit" id="bth-fast"
+		                	    class="btn btn-primary btn-lg" value="FAST">Fast
+		            	</button>
+		        	</div>
+		        </div>
+		    </form>
+	    </div>
+</html> 

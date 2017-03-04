@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+     
+         <div th:fragment="carsFragment" class="col-sm-offset-2 col-sm-10"> 
+             <table class="table">
+ 				  <tr >
+			        <td>Pos</td>
+			        <td>Id</td>
+			        <td>Driver</td>
+			        <td>Color</td>
+			        <td>Speed</td>
+			        <td>Direction</td>
+			        <td>Offset</td>
+			        <td>#Segments</td>
+			        <td>#Laps</td>
+			        <td>Next</td>
+			      </tr>         
+	             <tr th:each="car,iter : ${cars}" th:if="${not #lists.isEmpty(cars)}" >
+			        <td th:text="${iter.index + 1}"></td>
+			        <td th:text="${car.id}"></td>
+			        <td th:text="${car.drivername}"></td>
+			        <td th:text="${car.color}"></td>
+			        <td th:text="${car.currentSpeed}"></td>
+			        <td th:text="${car.currentDirection}"></td>
+			        <td th:text="${car.currentOffset}"></td>
+			        <td th:text="${car.nrSegmentsTravelled}"></td>
+			        <td th:text="${car.lapsCompleted}"></td>
+			        <td th:text="${car.nextDirection}"></td>
+			      </tr>
+		      </table>
+         </div>
+</html> 
